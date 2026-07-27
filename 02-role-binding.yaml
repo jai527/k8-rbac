@@ -1,13 +1,15 @@
-apiVersion: 
+apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   namespace: roboshop
-  name: roboshop-traine
+  name: roboshop-trainee-binding
+
 subjects:
-- kind: user
+- kind: User
   name: jai
-  apiGroup: rbac.authorization.k8s.io/v1
+  apiGroup: rbac.authorization.k8s.io
+
 roleRef:
   kind: Role
-  name: roboshop-traine
-  apiGroup: rbac.authorization.k8s.io/v1
+  name: roboshop-trainee
+  apiGroup: rbac.authorization.k8s.io
